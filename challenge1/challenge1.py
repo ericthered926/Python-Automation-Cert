@@ -12,7 +12,7 @@ class Challenge1(unittest.TestCase):
 
     def test_challenge1(self):
         #code for our test steps
-        self.driver.get("https://www.ksl.com")
+        self.driver.get("https://www.google.com")
         self.assertIn("Google", self.driver.title)
 
 if __name__ == '__main__':
