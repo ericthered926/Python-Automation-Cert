@@ -15,11 +15,9 @@ class Challenge2(unittest.TestCase):
     def test_challenge2(self):
         #code for our test steps
         self.driver.get("https://www.copart.com")
-        self.driver.implicitly_wait(10)
         searchBox = self.driver.find_element_by_xpath("//header//form[contains(@role,'search')]//input[contains(@type,'text')]")
         searchBox.send_keys('exotics')
         searchBox.send_keys(Keys.ENTER)
-        self.driver.implicitly_wait(10)
         assert self.driver.find_element_by_xpath("//div[contains(@class,'checkbox')]/label/abbr[contains(@value,'Porsche')]")
 
 if __name__ == '__main__':
