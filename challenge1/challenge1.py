@@ -5,7 +5,8 @@ class Challenge1(unittest.TestCase):
 
     def setUp(self):
         #code to startup webdriver
-        self.driver = webdriver.Chrome("../env/chromedriver-Darwin")
+        self.driver = webdriver.Chrome("../env/chromedriver")
+
     def tearDown(self):
         #code to close webdriver
         self.driver.close()
