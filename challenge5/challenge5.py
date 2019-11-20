@@ -21,6 +21,7 @@ class Challenge5(unittest.TestCase):
         #code for our test steps
         cars=dict()
         damage=dict()
+
         def outputList(inputDictionary,inputList):
             for i in inputList:
                 model = i.text
@@ -34,7 +35,7 @@ class Challenge5(unittest.TestCase):
                 output+=str(inputDictionary.get(i))
                 print(output)
             print("")
-            
+
         self.driver.get("https://www.copart.com")
         searchBox = self.driver.find_element_by_xpath("//header//form[contains(@role,'search')]//input[contains(@type,'text')]")
         searchBox.send_keys('porsche')
@@ -43,10 +44,7 @@ class Challenge5(unittest.TestCase):
         self.driver.find_element_by_xpath("//div[contains(@class,'top')]//select/option[contains(@value,'100')]").click()
         self.driver.implicitly_wait(20)
         wait = WebDriverWait(self.driver, 10)
-        try:
-            wait.until(EC.element_to_be_clickable((By.XPATH, "//tr[100]/td/span[contains(@data-uname,'lotsearchLotmodel')]")))
-        except NoSuchElementException:
-            print('No element found')
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//tr[100]/td/span[contains(@data-uname,'lotsearchLotmodel')]")))
         carList = self.driver.find_elements_by_xpath("//td/span[contains(@data-uname,'lotsearchLotmodel')]")
         damageList = self.driver.find_elements_by_xpath("//td/span[contains(@data-uname,'lotsearchLotdamagedescription')]")
         outputList(cars,carList)
