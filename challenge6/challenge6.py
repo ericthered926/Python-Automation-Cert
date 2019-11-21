@@ -21,7 +21,7 @@ class Challenge6(unittest.TestCase):
         searchBox = self.driver.find_element_by_xpath("//header//form[contains(@role,'search')]//input[contains(@type,'text')]")
         searchBox.send_keys('nissan')
         searchBox.send_keys(Keys.ENTER)
-        wait = WebDriverWait(self.driver, 30)
+        wait = WebDriverWait(self.driver, 10)
         assert wait.until(EC.element_to_be_clickable((By.XPATH, "//a[contains(.,'Model')]")))
         self.driver.find_element_by_xpath("//a[contains(.,'Model')]").click()
         try:
