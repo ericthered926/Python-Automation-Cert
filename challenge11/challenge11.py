@@ -7,7 +7,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-class Challenge9(unittest.TestCase):
+class Challenge11(unittest.TestCase):
+
+    def setUp(self):
+        #code to startup webdriver
+        self.driver = webdriver.Chrome("../env/chromedriver")
+
+    def tearDown(self):
+        #code to close webdriver
+        self.driver.close()
 
     def test_challenge9(self):
         #code for our test steps

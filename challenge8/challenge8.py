@@ -9,14 +9,6 @@ from selenium.webdriver.common.by import By
 
 class Challenge8(unittest.TestCase):
 
-    def setUp(self):
-        #code to startup webdriver
-        self.driver = webdriver.Chrome("../env/chromedriver")
-
-    def tearDown(self):
-        #code to close webdriver
-        self.driver.close()
-
     def test_challenge8(self):
         #code for our test steps
         API_ENDPOINT = "https://www.copart.com/public/lots/search"
